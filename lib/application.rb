@@ -34,5 +34,3 @@ class Application
     end
   end
 end
-
-Application.new.run

@@ -1,4 +1,4 @@
-require 'valera'
+require_relative 'valera'
 
 class Actions
   def fetching_actions(configurate)

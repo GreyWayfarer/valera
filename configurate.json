@@ -1,0 +1,32 @@
+{
+    "Go work":{
+        "conds": {
+            "mana": {
+                "value": "50",
+                "operator": "<"
+            },
+            "fatigue": {
+                "value": "10",
+                "operator": "<"
+            }
+        },
+        "effects": {
+            "fun": {
+                "value": "5",
+                "operator": "-"
+            },
+            "mana": {
+                "value": "30",
+                "operator": "-"
+            },
+            "money": {
+                "value": "100",
+                "operator": "+"
+            },
+            "fatigue": {
+                "value": "70",
+                "operator": "+"
+            }
+        }
+    }
+}

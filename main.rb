@@ -1,3 +1,3 @@
-require_relative '/lib/application'
+require './lib/application'
 
-application.new.run
+Application.new.run

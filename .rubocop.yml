@@ -7,6 +7,9 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Metrics/ParameterLists:
+  MaxOptionalParameters: 5
+
 Metrics/MethodLength:
   Max: 20
 

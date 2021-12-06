@@ -25,11 +25,11 @@ RSpec.describe Valera do
     end
     context 'All normal' do
       status = {
-      'health' => 1,
-      'mana' => 7,
-      'fun' => 10,
-      'money' => 5,
-      'fatigue' => 15
+        'health' => 1,
+        'mana' => 7,
+        'fun' => 10,
+        'money' => 5,
+        'fatigue' => 15
       }
       it { expect(valera.dead?(status)).to eq(false) }
     end

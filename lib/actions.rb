@@ -6,4 +6,9 @@ class Actions
     configurate.each_key { |key| actions_array.push key }
     actions_array
   end
+
+  def read_actions(game)
+    game.action_item = gets.chomp.to_i
+    return unless game.action_item.negative? || (game.action_item > 9)
+  end
 end

@@ -12,5 +12,5 @@ class Output
       puts "Money: #{status['money']}\n"
       puts "Fatigue: #{status['fatigue']}\n\n"
     end
-end
+  end
 end

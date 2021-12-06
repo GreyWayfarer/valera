@@ -24,7 +24,7 @@ class Application
       Output.print_status(@valera.status)
       Output.print_actions(actions_array)
       @actions.read_actions(@game)
-      @game.perform_action!(status, configurate, actions_array)
+      @game.perform_action!(@valera.status, configurate, actions_array)
 
       abort 'The End' if @valera == false
     end

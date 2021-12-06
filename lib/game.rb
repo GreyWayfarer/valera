@@ -9,9 +9,12 @@ class Game
   end
 
   def perform_action!(status, configurate, actions_array)
+    abort 'Exit' if action_item.zero?
     selected_action = configurate[actions_array[action_item - 1]]
     Actions.new.execute!(status, selected_action)
-    valera.check_status!(@valera.status)
-    return abort 'YOU DIED. RETRY?' if valera.dead?(@valera.status)
+    @valera.check_status!(@valera.status)
+    return abort 'YOU DIED. RETRY?' if @valera.dead?(@valera.status)
+
+    valera
   end
 end

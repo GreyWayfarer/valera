@@ -17,4 +17,13 @@ class Valera
 
     false
   end
+
+  def check_status!(status)
+    status['health'] = 100 if status['health'] > 100
+    status['mana'] = 0 if (status['mana']).negative?
+    status['mana'] = 100 if (status['mana']) > 100
+    status['fun'] = 10 if status['fun'] > 10
+    status['fun'] = -10 if status['fun'] < -10
+    status['fatigue'] = 0 if (status['fatigue']).negative?
+  end
 end

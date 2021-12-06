@@ -26,6 +26,8 @@ class Application
       puts "Fatigue: #{@valera.status['fatigue']}\n\n"
 
       Menu.print_actions(actions_array)
+      Action.read_actions(game)
+      Game.perform_action!(status, configurate, actions_array)
 
       if @valera.dead?(@valera.status) == true
         puts 'The End'

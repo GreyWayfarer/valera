@@ -1,8 +1,10 @@
 class Output
   class << self
     def print_actions(actions_array)
-      actions_array.map.with_index { |action, i| puts "#{i + 1}. #{action}\n" }
       puts '0. Exit'
+      puts '1. Save'
+      puts '2. Load'
+      actions_array.map.with_index { |action, i| puts "#{i + 3}. #{action}\n" }
     end
 
     def print_status(status)

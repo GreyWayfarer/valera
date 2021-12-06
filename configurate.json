@@ -28,5 +28,24 @@
                 "operator": "+"
             }
         }
+    },
+    "Walk in the park":{
+        "conds": {
+            
+        },
+        "effects": {
+            "fun": {
+                "value": "1",
+                "operator": "+"
+            },
+            "mana": {
+                "value": "10",
+                "operator": "-"
+            },
+            "fatigue": {
+                "value": "10",
+                "operator": "+"
+            }
+        }
     }
 }

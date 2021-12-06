@@ -33,7 +33,6 @@ class Actions
   def select_action(status, action)
     unless action['conds'].nil?
       return unless check_conds(status, action['conds'])
-
       status = change_status(status, action['effects'])
     end
     status

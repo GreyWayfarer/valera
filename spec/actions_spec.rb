@@ -1,4 +1,5 @@
 require './lib/actions'
+require './lib/application'
 
 RSpec.describe Actions do
   describe '#execute!' do
@@ -72,6 +73,13 @@ RSpec.describe Actions do
       }
       expected = { 'fatigue' => 10, 'happienss' => 6, 'health' => 100, 'mana' => 20, 'money' => 100 }
       it { expect(Actions.new.execute!(status, walk_in_the_park_action)).to eq expected }
+    end
+  end
+  describe 'fetching actions' do
+    expected = ['Go work', 'Walk in the park']
+    context 'from json' do
+      app = Application.new.configurate_open
+      it { expect(Actions.new.fetching_actions(app)).to eq expected }
     end
   end
 end

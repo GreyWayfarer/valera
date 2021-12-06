@@ -20,7 +20,7 @@ RSpec.describe Valera do
         'mana' => 7,
         'fun' => 10,
         'money' => 5,
-        'fatigue' => 100
+        'fatigue' => 101
       }
       it { expect(valera.dead?(status)).to eq(true) }
     end

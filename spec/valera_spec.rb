@@ -13,7 +13,6 @@ RSpec.describe Valera do
       }
       it { expect(valera.dead?(status)).to eq(true) }
     end
-    valera = Valera.new
     context 'Fatigue is over 100' do
       status = {
         'health' => 1,
@@ -24,7 +23,16 @@ RSpec.describe Valera do
       }
       it { expect(valera.dead?(status)).to eq(true) }
     end
-    valera = Valera.new
+    context 'All normal' do
+      status = {
+      'health' => 1,
+      'mana' => 7,
+      'fun' => 10,
+      'money' => 5,
+      'fatigue' => 15
+      }
+      it { expect(valera.dead?(status)).to eq(false) }
+    end
     context 'Rebuild status' do
       status = {
         'health' => 122,

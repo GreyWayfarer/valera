@@ -1,5 +1,4 @@
 require './lib/actions'
-require './lib/application'
 
 RSpec.describe Actions do
   describe '#execute!' do
@@ -78,7 +77,8 @@ RSpec.describe Actions do
   describe 'fetching actions' do
     expected = ['Go work', 'Walk in the park']
     context 'from json' do
-      app = Application.new.configurate_open
+      file = File.read('../valera/configurate.json')
+      app = JSON.parse(file)
       it { expect(Actions.new.fetching_actions(app)).to eq expected }
     end
   end

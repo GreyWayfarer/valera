@@ -19,7 +19,6 @@ class Valera
   end
 
   def check_status!(status)
-    puts status
     status['health'] = 100 if status['health'] > 100
     status['mana'] = 0 if status['mana'].negative?
     status['mana'] = 100 if (status['mana']) > 100

@@ -10,7 +10,7 @@ class Actions
   def read_actions(game)
     loop do
       game.action_item = gets.chomp.to_i
-      return unless game.action_item.negative? || (game.action_item > 9)
+      return unless game.action_item.negative? || (game.action_item > 4)
 
       puts 'illegal action, repeat'
     end

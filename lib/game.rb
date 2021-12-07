@@ -11,6 +11,7 @@ class Game
   end
 
   def perform_action!(status, configurate, actions_array)
+    puts status
     abort 'Exit' if action_item.zero?
     Saver.save_game(status) if action_item == 1
     @valera.status = Saver.load_game if action_item == 2
@@ -19,8 +20,10 @@ class Game
       @valera.status = @actions.execute!(status, selected_action)
     end
     @valera.check_status!(@valera.status)
-    return abort 'YOU DIED. RETRY?' if @valera.dead?(@valera.status)
-
+    if @valera.dead?(@valera.status)
+      puts 'YOU DIED. RETRY?'
+      abort 'bye!' unless gets.chomp.to_s == 'YES'
+    end
     @valera
   end
 end

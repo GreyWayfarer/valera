@@ -1,4 +1,4 @@
-# Ruby Starter Project
+# Valera
 
 ![Unit Tests & Lint](https://github.com/GreyWayfarer/valera/workflows/Unit%20Tests%20&%20Lint/badge.svg)
 
@@ -9,6 +9,12 @@
 gem install bundler
 bundle install
 ```
+## Run
+
+```bash
+ruby main.rb
+```
+
 
 ## Run test
 

@@ -1,29 +1,37 @@
 require './lib/game'
 require './lib/actions'
+require './lib/valera'
+require 'json'
 
 RSpec.describe Game do
+  actions = Actions.new
+  game = Game.new
+  file = File.read('../valera/configurate.json')
+  app = JSON.parse(file)
+  actions_array = actions.fetching_actions(app)
+
   describe 'perform action!' do
-    actions = Actions.new
-    context 'action_item = 0' do
-      game = Game.new
-      file = File.read('../valera/configurate.json')
-      app = JSON.parse(file)
-      actions_array = actions.fetching_actions(app)
+    context 'action_item = 4' do
       status = {
         'health' => 100,
-        'mana' => 30,
-        'happienss' => 5,
+        'mana' => 100,
+        'fun' => 0,
         'fatigue' => 0,
-        'money' => 100
+        'money' => 0
       }
-      game.action_item = 0
-      it 'Leaving the game' do
-        expect do
-          game.perform_action!(status, app, actions_array).call(game.valera)
-        rescue SystemExit
-          nil
-        end.to output("Exit\n").to_stderr
-      end
+      new_status = {
+        'health' => 100,
+        'mana' => 90,
+        'fun' => 1,
+        'fatigue' => 10,
+        'money' => 0
+      }
+      valera = Valera.new
+      game.action_item = 4
+      it {
+        valera = game.perform_action!(status, app, actions_array)
+        expect(valera.status).to eq new_status
+      }
     end
   end
 end

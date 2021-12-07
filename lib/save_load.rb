@@ -15,6 +15,7 @@ class Saver
       puts 'enter file name: '
       filename = "./saves/#{$stdin.gets.strip}.json"
       break if File.file?(filename)
+
       puts 'File not found'
     end
     file = File.read(filename)

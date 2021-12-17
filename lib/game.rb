@@ -11,7 +11,7 @@ class Game
   end
 
   def perform_action!(status, configurate, actions_array)
-    puts status
+    puts action_item
     abort 'Exit' if action_item.zero?
     Saver.save_game(status) if action_item == 1
     @valera.status = Saver.load_game if action_item == 2

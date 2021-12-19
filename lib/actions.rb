@@ -1,5 +1,4 @@
 require_relative 'valera'
-
 class Actions
   def fetching_actions(configurate)
     actions_array = []
@@ -9,7 +8,7 @@ class Actions
 
   def read_actions(game)
     loop do
-      game.action_item = gets.chomp.to_i
+      game.action_item = $stdin.gets.chomp.to_i
       return unless game.action_item.negative? || (game.action_item > 4)
 
       puts 'illegal action, repeat'

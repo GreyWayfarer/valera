@@ -44,7 +44,15 @@ RSpec.describe Actions do
           }
         }
       end
-      let(:expected) { { 'fatigue' => 70, 'happienss' => 0, 'health' => 100, 'mana' => 0, 'money' => 200 } }
+      let(:expected) do
+        {
+          'fatigue' => 70,
+          'happienss' => 0,
+          'health' => 100,
+          'mana' => 0,
+          'money' => 200
+        }
+      end
       it { expect(Actions.new.execute!(status, go_work_action)).to eq expected }
     end
     context 'Walk in the park' do
@@ -68,7 +76,15 @@ RSpec.describe Actions do
           }
         }
       end
-      let(:expected) { { 'fatigue' => 10, 'happienss' => 6, 'health' => 100, 'mana' => 20, 'money' => 100 } }
+      let(:expected) do
+        {
+          'fatigue' => 10,
+          'happienss' => 6,
+          'health' => 100,
+          'mana' => 20,
+          'money' => 100
+        }
+      end
       it { expect(Actions.new.execute!(status, walk_in_the_park_action)).to eq expected }
     end
   end

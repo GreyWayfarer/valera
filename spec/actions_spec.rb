@@ -1,6 +1,14 @@
 require './lib/actions'
 
 RSpec.describe Actions do
+  describe '#fetching_actions' do
+    let(:file) { File.read('../valera/configurate.json') }
+    let(:configurate) { JSON.parse(file) }
+    let(:actions_array) { ['Go work', 'Walk in the park'] }
+    it {
+      expect(Actions.new.fetching_actions(configurate)).to eq actions_array
+    }
+  end
   describe '#execute!' do
     let(:status) do
       {

@@ -13,24 +13,9 @@ RSpec.describe Game do
 
   describe 'perform action!' do
     context 'action_item = 4' do
-      #let(:game.action_item) { 4 }
+      let(:status) { { 'health' => 100, 'mana' => 100, 'fun' => 0, 'fatigue' => 0, 'money' => 0 } }
+      let(:new_status) { { 'health' => 100, 'mana' => 90, 'fun' => 1, 'fatigue' => 10, 'money' => 0 } }
       it {
-        status =
-          {
-            'health' => 100,
-            'mana' => 100,
-            'fun' => 0,
-            'fatigue' => 0,
-            'money' => 0
-          }
-        new_status =
-          {
-            'health' => 100,
-            'mana' => 90,
-            'fun' => 1,
-            'fatigue' => 10,
-            'money' => 0
-          }
         game.action_item = 4
         valera = game.perform_action!(status, app, actions_array)
         expect(valera.status).to eq new_status

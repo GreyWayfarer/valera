@@ -1,7 +1,7 @@
 class Valera
   attr_accessor :status
 
-  def initialize(health = 100, mana = 100, fun = 0, money = 0, fatigue = 0)
+  def initialize(health = 100, mana = 40, fun = 0, money = 0, fatigue = 0)
     @status = {
       'health' => health,
       'mana' => mana,

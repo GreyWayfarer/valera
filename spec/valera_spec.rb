@@ -1,7 +1,7 @@
 require './lib/valera'
 
 RSpec.describe Valera do
-  describe 'dead?' do
+  describe '#dead?' do
     valera = Valera.new
     context 'Health is negative' do
       status = {
@@ -43,7 +43,7 @@ RSpec.describe Valera do
       }
       expected_status = {
         'health' => 100,
-        'mana' => 100,
+        'mana' => 40,
         'fun' => 0,
         'money' => 0,
         'fatigue' => 0
